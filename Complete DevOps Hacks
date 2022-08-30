@@ -1,0 +1,124 @@
+
+
+Helm & K8s
+
+Kubernetes Deployment files can be created using  Helm chart 
+
+https://artifacthub.io/
+
+#Helm libraries used to create customized charts 
+
+http://masterminds.github.io/sprig/ 
+
+Helm Cheat Sheet  
+
+https://phoenixnap.com/kb/helm-commands-cheat-sheet 
+
+#To Create a chart from the scratch with the Skeliton 
+helm create ReleaseName
+
+
+
+Kubernetes cheat sheet 
+
+https://www.mirantis.com/blog/kubernetes-cheat-sheet/ 
+
+https://kubernetes.io/docs/reference/kubectl/cheatsheet/ 
+
+https://cheatsheet.dennyzhang.com/cheatsheet-kubernetes-a4 
+
+
+
+Kubernetes deployment converter to Helm
+
+Helmify is an important tool that creates a Kubernetes deployment file into a helm chart based on the given deployment files.
+
+Eg:-
+
+ Usage
+
+From file: cat my-app.yaml | helmify mychart
+
+Will create 'mychart' directory with Helm chart from yaml file with k8s objects.
+
+    
+
+cat *.yaml |helmify NameOfTheChart
+
+To Create a helm chart from multiple Yaml chart 
+
+awk 'FNR==1 && NR!=1  {print "---"}{print}' *.yaml | helmify mychart
+
+Will create 'mychart' directory with Helm chart from all yaml files in <my_directory> directory.
+
+From kustomize output:
+
+kustomize build <kustomize_dir> | helmify mychart
+
+Will create 'mychart' directory with Helm chart from kustomize output.
+
+https://github.com/arttor/helmify 
+
+https://github.com/codeandcode0x/helmtrans 
+
+Java Key store Certificate generation 
+
+https://docs.huihoo.com/fuse/services-framework/2.2/security/i382664.html 
+
+
+
+tls.crt renewal command without the password 
+
+
+
+openssl req -new -newkey ec -pkeyopt ec_paramgen_curve:secp384r1 -nodes -subj "/C=CZ/ST=Praha/L=Praha/O=Bankovni identita, a.s./CN=sentry.bankid.cz/emailAddress=admin@bankid.cz" -addext "subjectAltName=DNS:SENTRY.BANKID.CZ" -keyout tls.key -out tls.csr
+
+
+
+
+
+Kubernetes Cluster Backup Manually 
+
+https://github.com/bpineau/katafygio
+
+
+
+Katafygio is a tool that is used to extract whole cluster yaml charts with the current state 
+
+Command 
+
+katafygio --local-dir /<locationOfYourbackupfolder>
+
+katafygio -e <name-of-the-directory>
+
+Docker Compose to Kubernetes  manifest 
+
+https://kubernetes.io/docs/tasks/configure-pod-container/translate-compose-kubernetes/ 
+
+
+
+To convert the docker-compose.yml to kubernetes resources kubectl, run kompose convert and then kubectl apply -f <output file>.
+
+kompose convert  .
+
+ 
+
+Kubernetes Various deployment resources YAML  files.
+
+https://cheatsheet.dennyzhang.com/kubernetes-yaml-templates 
+
+
+
+Cluster resource utilisation :  
+
+
+
+  https://www.middlewareinventory.com/blog/cpu-memory-usage-nodes-k8s/ 
+
+
+
+Kubernetes plugins 
+
+Krew:   https://formulae.brew.sh/formula/krew 
+
+kubectl krew install <NameOfPlugin>
