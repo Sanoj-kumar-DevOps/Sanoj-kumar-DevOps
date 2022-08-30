@@ -71,7 +71,8 @@ tls.crt renewal command without the password
 
 
 
-openssl req -new -newkey ec -pkeyopt ec_paramgen_curve:secp384r1 -nodes -subj "/C=CZ/ST=Praha/L=Praha/O=Bankovni identita, a.s./CN=sentry.bankid.cz/emailAddress=admin@bankid.cz" -addext "subjectAltName=DNS:SENTRY.BANKID.CZ" -keyout tls.key -out tls.csr
+openssl req -new -newkey ec -pkeyopt ec_paramgen_curve:secp384r1 -nodes -subj "/C=CZ/ST=Praha/L=Praha/O=
+company, a.s./CN=sentry.company.cz/emailAddress=admin@company.cz" -addext "subjectAltName=DNS:SENTRY.company.CZ" -keyout tls.key -out tls.csr
 
 
 
